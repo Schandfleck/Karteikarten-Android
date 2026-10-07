@@ -1,0 +1,39 @@
+# Gradle / Android build outputs
+.gradle/
+.gradle-home/
+.android/
+.kotlin/
+**/build/
+
+# Local machine configuration and signing
+local.properties
+signing.properties
+signing/
+*.jks
+*.keystore
+*.p12
+*.pem
+.env
+.env.*
+!.env.example
+
+# Generated APKs stay local; distribute via GitHub Releases
+APK/*
+!APK/README.md
+*.apk
+*.aab
+*.apksig
+*.idsig
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Private user data
+*.db
+*.db-journal
+*.db-shm
+*.db-wal

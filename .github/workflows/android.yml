@@ -1,0 +1,42 @@
+name: Android build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-37 build-tools;36.0.0'
+      - name: Build debug APK and run Android Lint
+        run: ./build.sh debug
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: Karteikarten-debug
+          path: APK/Karteikarten-debug.apk
+          if-no-files-found: error
+      - name: Upload lint reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: Android-lint
+          path: app/build/reports/lint-results-debug.*
+          if-no-files-found: warn
