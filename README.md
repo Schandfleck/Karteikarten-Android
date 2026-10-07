@@ -16,7 +16,7 @@ Eine lokale Karteikarten-App mit Googles offiziellen Jetpack-Compose-Material-3-
 
 ## Installation
 
-Die lokal gebaute, signierte APK liegt in `APK/Karteikarten.apk`. Zum Installieren auf das Android-Gerät kopieren und öffnen. Updates mit derselben Paketkennung und demselben Signierschlüssel erhalten vorhandene Karten. APKs gehören als Download in GitHub Releases und werden nicht im Quellcode-Repository gespeichert.
+Die lokal gebaute, signierte APK liegt in `APK/Karteikarten.apk`. Zum Installieren auf das Android-Gerät kopieren und öffnen. Updates mit derselben Paketkennung und demselben Signierschlüssel erhalten vorhandene Karten.
 
 ## Projekt bauen
 
@@ -47,16 +47,10 @@ APK/                  Lokale Build-Ausgabe (APK-Dateien ignoriert)
 signing/              Privater Signierschlüssel (ignoriert)
 ```
 
-Die GitHub-Prüfung baut eine Debug-APK und führt Android Lint ohne private Signierschlüssel aus. Der Workflow ist für Pushes auf main und Pull Requests vorbereitet.
-
 ## Dokumentation
 
 - [Build und Signierung](docs/BUILDING.md)
 - [Daten übertragen und sichern](docs/DATA.md)
-- [GitHub-Repository einrichten](docs/GITHUB.md)
 - [Repository-Vorbereitung und Prüfungen](docs/REPOSITORY.md)
-- [Gerätetests und Versionshistorie](docs/TESTBERICHT.md)
 - [Änderungen](CHANGELOG.md)
 - [Drittanbieter-Hinweise](NOTICE.md)
-
-Die App basiert fachlich auf der ursprünglichen Python-Karteikarten-App. Für das Projekt wurde noch keine eigene Open-Source-Lizenz festgelegt; die Lizenzen der Drittanbieter-Komponenten stehen in NOTICE.md.
